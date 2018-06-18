@@ -2,12 +2,9 @@ spring:
   cloud:
     stream:
       bindings:
-        input:
-          destination: ex.stream.in
-          binder: rabbit1
         output:
           destination: ex.stream.out
-          group: order
+          group: test
           binder: rabbit1
       binders:
         rabbit1:
@@ -15,8 +12,8 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 192.168.99.100
+                host: rabbit
                 port: 5672
-                username: guest
-                password: guest
+                username: config
+                password: config
                 
